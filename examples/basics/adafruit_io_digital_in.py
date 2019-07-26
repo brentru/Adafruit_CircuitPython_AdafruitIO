@@ -61,7 +61,8 @@ except AdafruitIO_RequestError:
     digital_feed = io.create_new_feed('digital')
 
 # Set up button
-button = digitalio.DigitalInOut(board.D12)
+BUTTON_PIN = board.D12
+button = digitalio.DigitalInOut(BUTTON_PIN)
 button.direction = digitalio.Direction.INPUT
 button.pull = digitalio.Pull.UP
 
