@@ -62,7 +62,7 @@ except AdafruitIO_RequestError:
 
 # Set up button
 BUTTON_PIN = board.D12
-button = digitalio.DigitalInOut(BUTTON_PIN)
+button = DigitalInOut(BUTTON_PIN)
 button.switch_to_input(pull.UP)
 
 button_current = 0
@@ -72,6 +72,6 @@ while True:
     else:
         button_current = 0
     print('Button -> ', button_current)
-    aio.send(digital_feed['value'], button_current)
+    io.send_data(digital_feed['value'], button_current)
 
     time.sleep(1)
