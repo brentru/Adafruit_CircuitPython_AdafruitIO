@@ -63,8 +63,7 @@ except AdafruitIO_RequestError:
 # Set up button
 BUTTON_PIN = board.D12
 button = digitalio.DigitalInOut(BUTTON_PIN)
-button.direction = digitalio.Direction.INPUT
-button.pull = digitalio.Pull.UP
+button.switch_to_input(pull.UP)
 
 button_current = 0
 while True:
